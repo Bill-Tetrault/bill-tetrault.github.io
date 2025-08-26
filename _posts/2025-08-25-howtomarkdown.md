@@ -1,3 +1,10 @@
+---
+title: "How to create .md files"
+mathjax: false
+layout: post
+categories: website
+---
+
 # Beginner's Guide to Creating Markdown Files
 
 Markdown is a lightweight markup language that makes it easy to format text for web pages, documentation, and README files. This guide will teach you everything you need to know to start creating your own `.md` files.
