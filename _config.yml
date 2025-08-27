@@ -24,7 +24,7 @@ navigation:                     # accepts {file, title, url, icon, sidebaricon}
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: Mail, icon: envelope, url: "mailto:william.tetrault+github@gmail.com"}
   - {title: Github, icon: github, url: "https://github.com/bill-tetrault"}
-  - {title: LinkedIn, icon: linkedin, url: "www.linkedin.com/in/bill-tetrault-9a762a6b"}
+  - {title: LinkedIn, icon: linkedin, url: "https//www.linkedin.com/in/bill-tetrault-9a762a6b"}
 
 comments:
 #  disqus_shortname: ""         # see https://disqus.com
