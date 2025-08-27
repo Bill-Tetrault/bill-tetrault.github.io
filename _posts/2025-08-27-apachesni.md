@@ -1,62 +1,27 @@
 ---
 layout: post
-title: "Apache SNI and HAProxy Issues with Configuration Examples"
+title: "Tech Tip: Fixing 421 Misdirected Request SNI Issues Between HAProxy and Apache"
 date: 2025-08-26
 author: Bill Tetrault
 tags: [jekyll, github, tutorials]
 ---
 ##### Created by Perplixity AI
 
-# Apache SNI and HAProxy Issues with Configuration Examples
+## Tech Tip: Fixing 421 Misdirected Request SNI Issues Between HAProxy and Apache
 
-## Apache SNI Issues
+### Overview
+The HTTP 421 "Misdirected Request" error typically occurs when Apache receives an HTTPS request with an SNI hostname that doesn’t match its configured virtual hosts. This often happens when HAProxy is used as a reverse proxy in front of Apache and does not correctly forward or handle the Server Name Indication (SNI) during TLS negotiation.
 
-- Lack of SNI support in older Apache versions
-- Misconfiguration of SSL certificates per virtual host
-- Client compatibility issues with non-SNI supporting browsers
-- Default fallback certificate served incorrectly
-- Impact on SSL logging and analytics
+---
 
-### Apache SNI Configuration Example
-```apache
-<VirtualHost *:443>
-    ServerName www.example1.com
-    SSLEngine on
-    SSLCertificateFile /etc/ssl/certs/example1.crt
-    SSLCertificateKeyFile /etc/ssl/private/example1.key
-</VirtualHost>
+### Why It Happens
+- Apache requires the correct SNI hostname during the TLS handshake to serve the right site.
+- Newer Apache versions enforce stricter SNI checks for security.
+- If HAProxy does not properly forward SNI information, Apache returns a 421 error indicating the request was sent to a server that cannot handle it.
 
-<VirtualHost *:443>
-    ServerName www.example2.com
-    SSLEngine on
-    SSLCertificateFile /etc/ssl/certs/example2.crt
-    SSLCertificateKeyFile /etc/ssl/private/example2.key
-</VirtualHost>
-```
+---
 
-## HAProxy SNI Issues
+### How to Fix It
 
-- Misconfiguration between SNI passthrough and SSL termination
-- Incorrect SSL certificate selection based on SNI
-- Limited SSL handshake logging for diagnostics
-- Routing issues with clients not supporting SNI
-- Increased CPU overhead with SSL termination using SNI
+#### HAProxy Configuration (SSL Passthrough)
 
-### HAProxy SNI Configuration Example (SSL Termination)
-```haproxy
-frontend https-in
-    bind *:443 ssl crt /etc/haproxy/certs/
-    acl host_example1 req.ssl_sni -i www.example1.com
-    acl host_example2 req.ssl_sni -i www.example2.com
-
-    use_backend example1_backend if host_example1
-    use_backend example2_backend if host_example2
-
-backend example1_backend
-    server example1 192.168.1.101:80
-
-backend example2_backend
-    server example2 192.168.1.102:80
-```
-
-*This file summarizes common issues and provides configuration examples for Apache HTTP Server and HAProxy related to SNI.*
