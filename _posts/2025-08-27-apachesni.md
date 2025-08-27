@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tech Tip: Fixing 421 Misdirected Request SNI Issues Between HAProxy and Apache"
-date: 2025-08-26
+date: 2025-08-27
 author: Bill Tetrault
 tags: [jekyll, github, tutorials]
 ---
