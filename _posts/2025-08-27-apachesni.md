@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Apache SNI and HAProxy Issues with Configuration Examples"
+date: 2025-08-26
+author: Bill Tetrault
+tags: [jekyll, github, tutorials]
+---
+##### Created by Perplixity AI
 
 # Apache SNI and HAProxy Issues with Configuration Examples
 
