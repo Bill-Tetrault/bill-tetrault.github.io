@@ -5,7 +5,7 @@ date: 2025-08-27
 author: Bill Tetrault
 tags: [jekyll, github, tutorials]
 ---
-##### Created by Perplixity AI
+##### Created using Perplixity AI
 
 # Tech Tip: Fixing 421 Misdirected Request SNI Issues Between HAProxy and Apache
 

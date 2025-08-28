@@ -4,7 +4,7 @@ mathjax: false
 layout: post
 categories: website
 ---
-##### Created by Perplexity AI
+##### Created using Perplexity AI
 
 # Beginner's Guide to Creating Markdown Files
 
