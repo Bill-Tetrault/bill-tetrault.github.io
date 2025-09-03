@@ -5,6 +5,7 @@ date: 2025-08-29
 author: Network Engineer Grandfather
 tags: [Cloudflare, GitHub Pages, Website Setup, Custom Domain, Jekyll]
 ---
+##### Created using Perplixity AI
 
 ## Guide to Setting Up Custom Domain on Cloudflare Pages with GitHub Pages
 
