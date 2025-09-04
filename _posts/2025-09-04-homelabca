@@ -6,7 +6,7 @@ categories: [security, network, home-lab, PKI]
 tags: [XCA, certificate authority, intermediate CA, home lab, PKI, certificates, security best practices]
 author: "Network Engineer"
 ---
-Created using Perplixity AI 
+Created using Perplexity AI
 
 # Guide to Using XCA for Home Lab PKI: Root CA, Intermediate CA, and Certificates
 
@@ -38,12 +38,12 @@ Created using Perplixity AI
     - Use the **[default] TLS_server** template.
     - Set Key Usage to Digital Signature, Key Encipherment.
     - Set Extended Key Usage (EKU) to TLS Web Server Authentication.
-    
+
   - **Deep Packet Inspection (DPI) Certificate**:
     - Create a subordinate CA certificate using the **[default] CA** template but intended to sign DPI certificates.
     - DPI certificates allow proxy devices to decrypt and inspect SSL traffic.
     - Key Usage should include Digital Signature and Key Encipherment with CA capabilities for signing DPI certs.
-  
+
 ### 5. Issuing Certificates from Templates
 - Use *Certificates* → *New Certificate*, select the appropriate template.
 - Fill relevant Subject fields, apply extensions automatically.
@@ -77,3 +77,15 @@ Created using Perplixity AI
 
 ### Linux (Ubuntu/Debian example)
 1. Copy your CA certificate (.crt) to `/usr/local/share/ca-certificates/`:
+   ```bash
+   sudo cp your-ca.crt /usr/local/share/ca-certificates/
+   ```
+2. Update CA certificates:
+   ```bash
+   sudo update-ca-certificates
+   ```
+3. For other distros like RHEL/CentOS or Fedora, use the equivalent CA cert directory and trust update commands.
+
+---
+
+This guide equips users to establish a private PKI with XCA for home lab use, including creating root and intermediate CAs, issuing certificates with appropriate key usages, applying security best practices, and deploying CA certificates on client systems.
