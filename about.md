@@ -1,5 +1,5 @@
 ---
-title: "Resume"
+title: "About"
 mathjax: false
 layout: page
 categories: resume
