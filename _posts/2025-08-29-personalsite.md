@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Guide to Setting Up a Website with Custom Domain on Cloudflare Pages Backed by GitHub Pages"
+title: "Guide to Setting Up a Free Personal Website"
 date: 2025-08-29
 author: Network Engineer Grandfather
 tags: [Cloudflare, GitHub Pages, Website Setup, Custom Domain, Jekyll]
