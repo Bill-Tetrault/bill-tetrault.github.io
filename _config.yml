@@ -20,6 +20,7 @@ show_minimal: true             # remove all clutter
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
   - {file: "index.html", sidebaricon: home}
   - {file: "archive.html", sidebaricon: archive}
+  - {file: "about.md", sidebaricon: user}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: Mail, icon: envelope, url: "mailto:william.tetrault+github@gmail.com"}

@@ -1,10 +1,10 @@
 ---
 title: "Resume"
 mathjax: false
-layout: post
-categories: website
+layout: page
+categories: resume
 ---
-##### Created using Perplexity AI
+##### Created using Perplexity AI from LinkedIn data
 
 # Bill Tetrault
 
