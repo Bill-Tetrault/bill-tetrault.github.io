@@ -6,7 +6,7 @@ categories: [security, network, home-lab, PKI]
 tags: [XCA, certificate authority, intermediate CA, home lab, PKI, certificates, security best practices]
 author: "Network Engineer"
 ---
-Created using Perplexity AI
+#### Created using Perplexity AI
 
 # Guide to Using XCA for Home Lab PKI: Root CA, Intermediate CA, and Certificates
 
