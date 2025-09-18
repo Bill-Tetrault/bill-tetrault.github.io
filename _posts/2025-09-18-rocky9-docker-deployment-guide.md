@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rocky Linux 9 Docker Deployment Guide"
+title: "Docker Homelab Beginner's Guide"
 author: "Bill Tetrault"
 date: 2025-09-18
 description: "Complete Beginner's Guide to Docker Services on Proxmox"
