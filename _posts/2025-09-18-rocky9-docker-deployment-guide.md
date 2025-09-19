@@ -357,6 +357,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - HOMEPAGE_ALLOWED_HOSTS=localhost:3000,10.100.30.104:3000
     networks:
       - frontend
 
