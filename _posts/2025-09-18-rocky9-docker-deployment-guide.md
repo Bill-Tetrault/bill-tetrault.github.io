@@ -239,8 +239,8 @@ sudo firewall-cmd --permanent --zone=public --add-port=3001/tcp
 # Prometheus (Port 9090)
 sudo firewall-cmd --permanent --zone=public --add-port=9090/tcp
 
-# GitLab (Ports 8080, 2424)
-sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+# GitLab (Ports 8081, 2424)
+sudo firewall-cmd --permanent --zone=public --add-port=8081/tcp
 sudo firewall-cmd --permanent --zone=public --add-port=2424/tcp
 
 # SSH (should already be open)
@@ -473,7 +473,7 @@ services:
     restart: unless-stopped
     hostname: 'gitlab.local'
     ports:
-      - "8080:80"
+      - "8081:80"
       - "2424:22"
     volumes:
       - gitlab_config:/etc/gitlab
@@ -481,7 +481,7 @@ services:
       - gitlab_data:/var/opt/gitlab
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.local:8080'
+        external_url 'http://gitlab.local:8081'
         gitlab_rails['gitlab_shell_ssh_port'] = 2424
         gitlab_rails['initial_root_password'] = 'changeme123'
     shm_size: '256m'
@@ -576,7 +576,7 @@ cat > /data/homepage/config/services.yaml << 'EOF'
 
 - Development:
     - GitLab:
-        href: http://{{HOSTNAME}}:8080
+        href: http://{{HOSTNAME}}:8081
         description: Git Repository
         icon: gitlab.png
         server: my-docker
@@ -658,7 +658,7 @@ docker exec -it pihole pihole -a -p
 #### GitLab Setup
 ```bash
 # GitLab will take several minutes to initialize
-# Access at http://YOUR_IP:8080
+# Access at http://YOUR_IP:8081
 # Username: root
 # Password: changeme123
 ```
