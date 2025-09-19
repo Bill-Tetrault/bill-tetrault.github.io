@@ -369,8 +369,9 @@ services:
     ports:
       - "3001:3000"  # HTTP
       - "3002:3001"  # HTTPS
-    volumes:
-      - /data/openspeedtest:/var/log/nginx
+    # For custom data volume (optional), comment out if not needed:
+    # volumes:
+      # - /data/openspeedtest:/var/log/nginx
     networks:
       - frontend
 
