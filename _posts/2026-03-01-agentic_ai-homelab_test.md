@@ -1,3 +1,11 @@
+---
+title: "Agentic AI Home Lab Beginners Guide"
+mathjax: false
+layout: post
+categories: website
+---
+##### Created using Perplexity AI
+
 # Agentic AI Home Lab on Proxmox
 
 > A step‑by‑step guide (from zero to working AI agents in Docker) written from the perspective of a recent computer science graduate.
