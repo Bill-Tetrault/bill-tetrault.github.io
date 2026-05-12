@@ -1,8 +1,17 @@
+---
+layout: post
+title: "OpenClaw Silicon Valley Build with Prompt"
+author: "Bill Tetrault"
+date: 2026-05-12
+description: "OpenClaw Agentic AI Home Lab on Rocky Linux 9.7 — Complete Build Guide"
+tags: [Linux, Rocky, Docker, Tutorial, Guide, DevOps, MCP, AI]
+categories: [guides, tutorials, linux]
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## Overview
 
-This guide walks you through installing and wiring up a local-first Tetraservers HQ assistant stack on a fresh Rocky Linux 9.7 minimal install, using:
+This guide walks you through installing and wiring up a local-first Pied-Piper HQ assistant stack on a fresh Rocky Linux 9.7 minimal install, using:
 
 - Ollama with a local **Gemma 4 E4B** model as the LLM backend.
 - **OpenClaw** as the agent framework and gateway, with **Mission Control** as the web UI.
@@ -35,7 +44,7 @@ At a high level, your setup will look like this:
 5. **Telegram**
     - A Telegram bot created via **BotFather** with an API token and chat ID.[^8][^9]
     - OpenClaw’s `channels` configuration wired to that bot using `openclaw configure --section channels`.[^6][^5]
-6. **Tetraservers HQ**
+6. **Pied-Piper HQ**
     - A themed agent roster (Richard, Gilfoyle, Dinesh, Big Head, Jared, Monica).
     - Mission Control dashboard views tuned around: coding, infra, security, docs, coordination, and research.
 
@@ -333,13 +342,13 @@ You should see at least:
 ### 5. Smoke test Gemma 4 E4B from CLI
 
 ```bash
-ollama run gemma4:e4b "Summarize the mission of Tetraservers HQ in two sentences."
+ollama run gemma4:e4b "Summarize the mission of Pied-Piper HQ in two sentences."
 ```
 
 If this is slow or crashes with CUDA/VRAM errors, fall back to:
 
 ```bash
-ollama run gemma4:e2b "Summarize the mission of Tetraservers HQ in two sentences."
+ollama run gemma4:e2b "Summarize the mission of Pied-Piper HQ in two sentences."
 ```
 
 On an RTX 2070:
@@ -492,7 +501,7 @@ systemctl status openclaw-gateway
 
 ## Telegram integration
 
-You’ll wire Telegram into OpenClaw so you can talk to the Tetraservers HQ agents from your phone.
+You’ll wire Telegram into OpenClaw so you can talk to the Pied-Piper HQ agents from your phone.
 
 ### 1. Create a Telegram bot with BotFather
 
@@ -502,8 +511,8 @@ On your phone or desktop:
 2. Search for `@BotFather` and start a chat.[^8][^9]
 3. Send `/newbot`.
 4. Follow the prompts:
-    - **Bot name**: e.g. `Tetraservers HQ Bot`.
-    - **Username**: must end with `bot`, e.g. `tetraservers_hq_bot`.[^8]
+    - **Bot name**: e.g. `Pied-Piper HQ Bot`.
+    - **Username**: must end with `bot`, e.g. `Pied-Piper_hq_bot`.[^8]
 5. BotFather replies with a message containing:
     - A link to your bot (`https://t.me/your_bot_username`).
     - An **HTTP API token** (keep this secret).[^9][^8]
@@ -557,16 +566,16 @@ Send a test message to your bot; you should see replies from Gemma 4 via OpenCla
 
 ***
 
-## Tetraservers HQ agent roster
+## Pied-Piper HQ agent roster
 
-This section defines a themed agent team for Tetraservers HQ, lightly inspired by *Silicon Valley* but written to be genuinely useful in a homelab.
+This section defines a themed agent team for Pied-Piper HQ, lightly inspired by *Silicon Valley* but written to be genuinely useful in a homelab.
 
 You can represent these as separate OpenClaw “agents” or routing profiles in Mission Control (exact implementation depends on your OpenClaw version; treat this as **example configuration**).
 
 ### Richard – Lead Architect \& Refactorer
 
 - **Purpose**
-High-quality coding help, refactoring, and systems design advice for Tetraservers HQ.
+High-quality coding help, refactoring, and systems design advice for Pied-Piper HQ.
 - **Personality prompt/style**
 Calm, thoughtful, slightly anxious about correctness. Prefers clean architecture and long-term maintainability over hacks. Explains trade-offs and points out edge cases.
 - **Primary responsibilities**
@@ -604,7 +613,7 @@ Dry, sarcastic, but technically precise. Assumes a reasonably competent operator
     - No direct credential handling; instruct humans where to store secrets.
 - **Suggested placement/routing**
     - Mission Control **Infra** pane.
-    - Default reviewer for any Tetraservers HQ infrastructure tasks.
+    - Default reviewer for any Pied-Piper HQ infrastructure tasks.
 
 
 ### Dinesh – Coding \& Experiments
@@ -660,7 +669,7 @@ Helpful, meticulous, occasionally over-enthusiastic. Focused on checklists and m
     - Coordinate which agent should handle which part of a request.
     - Perform safety/impact reviews before infra changes are approved.
 - **Example tasks**
-    - “Create a plan for migrating Tetraservers HQ to a new host.”
+    - “Create a plan for migrating Pied-Piper HQ to a new host.”
     - “Review Gilfoyle’s backup strategy and flag missing tests.”
 - **Recommended guardrails**
     - Always ask for confirmation before scheduling or suggesting impactful changes.
@@ -673,13 +682,13 @@ Helpful, meticulous, occasionally over-enthusiastic. Focused on checklists and m
 ### Monica – Research \& Product Strategy
 
 - **Purpose**
-Research, comparison, and homelab/product support for Tetraservers HQ.
+Research, comparison, and homelab/product support for Pied-Piper HQ.
 - **Personality prompt/style**
 Direct, analytical, supportive but demanding of clarity. Prefers evidence-based recommendations.
 - **Primary responsibilities**
     - Compare tools, models, and architectures (e.g. Gemma 4 E4B vs E2B, other LLMs).
     - Research best practices for homelab security, backup, and automation.
-    - Help prioritize features and improvements for Tetraservers HQ.
+    - Help prioritize features and improvements for Pied-Piper HQ.
 - **Example tasks**
     - “Compare local Ollama + Gemma vs cloud LLMs for this workflow.”
     - “Propose a roadmap for improving Mission Control dashboards over the next 3 months.”
@@ -710,7 +719,7 @@ nvidia-smi
 ```bash
 sudo systemctl status ollama
 curl http://localhost:11434/api/tags
-ollama run gemma4:e4b "Say 'Tetraservers HQ online' in one sentence."
+ollama run gemma4:e4b "Say 'Pied-Piper HQ online' in one sentence."
 ```
 
 - Ensure `ollama` is `active (running)` and that `gemma4:e4b` responds reasonably quickly.[^3]
@@ -718,7 +727,7 @@ ollama run gemma4:e4b "Say 'Tetraservers HQ online' in one sentence."
 If you see VRAM errors, test with E2B:
 
 ```bash
-ollama run gemma4:e2b "Say 'Tetraservers HQ online' in one sentence."
+ollama run gemma4:e2b "Say 'Pied-Piper HQ online' in one sentence."
 ```
 
 
@@ -914,7 +923,7 @@ After updates:
 
 ## Next improvements
 
-Once the base Tetraservers HQ stack is live and stable, you can:
+Once the base Pied-Piper HQ stack is live and stable, you can:
 
 1. **Add more local models**
     - Pull additional models via `ollama pull` for specialized tasks (e.g. smaller fast models for quick replies, coding-specialized variants, etc.).[^11][^3]
@@ -931,7 +940,7 @@ Once the base Tetraservers HQ stack is live and stable, you can:
 4. **Automate backups and health checks**
     - Add cron jobs or systemd timers for backups, and simple health check scripts that alert you (via Telegram) if `nvidia-smi`, `ollama`, or the gateway are failing.
 
-With this setup, Tetraservers HQ becomes a durable, GPU‑accelerated, mostly local agent system you can grow over time while keeping control of your data and infrastructure.
+With this setup, Pied-Piper HQ becomes a durable, GPU‑accelerated, mostly local agent system you can grow over time while keeping control of your data and infrastructure.
 <span style="display:none">[^14][^15][^16][^17][^18][^19][^20][^21][^22][^23][^24][^25][^26][^27][^28][^29][^30]</span>
 
 <div align="center">⁂</div>

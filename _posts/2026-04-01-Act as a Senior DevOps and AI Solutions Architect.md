@@ -8,7 +8,6 @@ tags: [Linux, Rocky, Docker, Tutorial, Guide, DevOps, MCP, AI]
 categories: [guides, tutorials, linux]
 ---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
-
 # Act as a Senior DevOps and AI Solutions Architect. Provide a comprehensive, step-by-step technical guide to building an Agentic AI Home Lab on a minimal Rocky Linux 9.7 host.
 
 Project Goals:
