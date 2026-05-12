@@ -8,6 +8,148 @@ tags: [Linux, Rocky, Docker, Tutorial, Guide, DevOps, MCP, AI]
 categories: [guides, tutorials, linux]
 ---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+You are an expert Linux homelab architect, AI agent systems builder, and technical writer. Create a complete, beginner-friendly, step-by-step guide for a first-time installer.
+
+## Goal
+Produce a practical guide for installing and configuring **OpenClaw** with **Mission Control** on a **minimal Rocky Linux 9.7** system, using a **local Ollama-hosted Gemma 4 model** as the LLM backend, with a **Telegram interface**, and a themed agent team based on the cast of *Silicon Valley*.
+
+## System details
+- OS: Rocky Linux 9.7 minimal install
+- CPU: Intel i5-8700K
+- RAM: 32 GB
+- GPU: NVIDIA RTX 2070 8 GB VRAM
+- Storage: 1 TB NVMe + 5 TB HDD
+- NVIDIA drivers are **not installed yet**
+- User is new to OpenClaw
+
+## Guide requirements
+Write the guide for someone who has **never installed OpenClaw before**.
+Use clear explanations before commands, explain why each major step matters, and avoid assuming prior OpenClaw knowledge.
+
+## Storage and filesystem requirements
+- Use **/data** for anything directly related to this OpenClaw guide
+- Include a recommended directory layout under /data, such as for:
+  - OpenClaw app files
+  - configs
+  - logs
+  - backups
+  - Ollama-related persistent data if appropriate
+  - Mission Control data
+- Explain what should live on the NVMe vs the 5 TB HDD
+- Include ownership and permissions steps
+
+## Installation scope
+The guide must include:
+1. Base OS preparation for Rocky Linux 9.7 minimal
+2. Required packages and utilities
+3. NVIDIA driver installation for Rocky Linux 9.7
+4. Verification that the GPU is usable
+5. Ollama installation
+6. Choosing and pulling the **largest Gemma 4 model that realistically fits in 8 GB VRAM**, and explain the tradeoffs
+7. Configuring Ollama as a local service
+8. Installing OpenClaw
+9. Configuring OpenClaw to use the **local Ollama Gemma 4 model**
+10. Installing and configuring **Mission Control**
+11. Configuring a **Telegram** interface for OpenClaw
+12. Startup, enablement, and persistence across reboots
+13. Validation and smoke testing
+14. Troubleshooting section for common failure cases
+15. Security hardening basics for a home lab deployment
+16. Backup/update strategy
+
+## Model selection requirement
+Because the system has an RTX 2070 with 8 GB VRAM, explicitly choose the **largest Gemma 4 variant that should fit reasonably on this hardware** when served by Ollama.
+- Explain why that model was chosen
+- Mention when the user should fall back to a smaller model
+- Mention expected performance limitations
+- Prefer a practical, likely-to-work choice over an overly ambitious one
+
+## Agent design requirement
+Create a themed agent team for a company called **Pied-Piper HQ**.
+Do **not** use Pied Piper as the company name.
+Map these agents to roles inspired by *Silicon Valley*:
+- Richard
+- Gilfoyle
+- Dinesh
+- Big Head
+- Jared
+- Monica
+
+For each agent, include:
+- Purpose
+- Personality prompt/style
+- Primary responsibilities
+- Example tasks
+- Recommended guardrails
+- Suggested OpenClaw/Mission Control placement or routing
+
+The agent team should cover at least:
+- Coding and refactoring
+- Infrastructure operations
+- Security and review
+- Documentation and onboarding
+- Project coordination
+- Research / business / product support
+
+Keep the character inspiration light and fun, but still professional and useful in a real homelab environment.
+
+## Mission Control requirement
+Include a section that designs and configures a **Mission Control** view for Pied-Piper HQ.
+The guide should describe:
+- Suggested dashboards or panes
+- Which agents appear where
+- Recommended workflows
+- Safe approval points for infrastructure-changing actions
+- Suggested queues for coding, infra, docs, and review
+
+## Output format requirement
+Structure the response as a real install guide with these sections:
+1. Overview
+2. Architecture plan
+3. Prerequisites
+4. Storage layout under /data
+5. Rocky Linux prep
+6. NVIDIA driver install
+7. Ollama install and model setup
+8. OpenClaw install
+9. Mission Control install
+10. Telegram integration
+11. Pied-Piper HQ agent roster
+12. First-run validation
+13. Troubleshooting
+14. Security and maintenance
+15. Next improvements
+
+## Style requirements
+- Make it a **first-time-user guide**
+- Use numbered steps where order matters
+- Include command blocks the user can paste
+- Include short explanations after important commands
+- Call out places where values must be customized
+- Include verification commands after each major installation phase
+- Prefer systemd services where applicable
+- Prefer stable, maintainable choices over clever ones
+
+## Important constraints
+- Assume the user starts from a minimal Rocky install
+- Assume no NVIDIA driver is installed yet
+- Assume the user wants to keep this mostly local-first
+- Assume OpenClaw should use the local Ollama model, not a cloud API by default
+- Use **Pied-Piper HQ** consistently throughout the guide
+- Use **/data** consistently for guide-related storage
+- Do not skip beginner context
+
+## If upstream project details are uncertain
+If exact package names, repo names, service names, or install steps may vary by release, explicitly label them as:
+- “verify in upstream docs before running”
+- “example configuration”
+- “adjust for current release naming”
+
+## Deliverable
+Return only the finished guide.
+Do not ask follow-up questions.
+Do not summarize what you are going to do.
+Just produce the guide.
 
 ## Overview
 
