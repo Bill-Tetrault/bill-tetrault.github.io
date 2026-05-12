@@ -9,7 +9,7 @@ categories: [guides, tutorials, linux]
 ---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
-#Prompt
+# Prompt
 You are an expert Linux homelab architect, AI agent systems builder, and technical writer. Create a complete, beginner-friendly, step-by-step guide for a first-time installer.
 
 ## Goal
@@ -152,6 +152,8 @@ Return only the finished guide.
 Do not ask follow-up questions.
 Do not summarize what you are going to do.
 Just produce the guide.
+
+***
 
 # Overview
 
