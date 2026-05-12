@@ -8,6 +8,8 @@ tags: [Linux, Rocky, Docker, Tutorial, Guide, DevOps, MCP, AI]
 categories: [guides, tutorials, linux]
 ---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+
+#Prompt
 You are an expert Linux homelab architect, AI agent systems builder, and technical writer. Create a complete, beginner-friendly, step-by-step guide for a first-time installer.
 
 ## Goal
@@ -151,7 +153,7 @@ Do not ask follow-up questions.
 Do not summarize what you are going to do.
 Just produce the guide.
 
-## Overview
+# Overview
 
 This guide walks you through installing and wiring up a local-first Pied-Piper HQ assistant stack on a fresh Rocky Linux 9.7 minimal install, using:
 
