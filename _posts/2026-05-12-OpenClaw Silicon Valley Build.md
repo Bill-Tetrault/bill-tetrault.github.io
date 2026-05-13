@@ -202,7 +202,7 @@ Before you start:
 
 1. **Base system**
     - Rocky Linux 9.7 minimal installed and booting cleanly.
-    - You have a non-root user with `sudo` access (examples will use `tetraserv`).
+    - You have a non-root user with `sudo` access (examples will use `piperserv`).
     - System is connected to the internet (for package and model downloads).
 2. **Access**
     - SSH access or local console with copy–paste capability.
@@ -254,11 +254,11 @@ sudo mkdir -p \
 
 2. Make your main user the owner so OpenClaw and tools can write there:
 ```bash
-sudo chown -R tetraserv:tetraserv /data
+sudo chown -R piperserv:piperserv /data
 sudo chmod -R 750 /data
 ```
 
-- Replace `tetraserv` with your actual username if different.
+- Replace `piperserv` with your actual username if different.
 - `750` gives full access to the owner, read+execute to the group, no access to others (a decent default for homelab).
 
 You can later tighten specific subdirectories (e.g. backups) with `chmod 700`.
@@ -510,7 +510,7 @@ OpenClaw integrates tightly with Ollama. The recommended path from Ollama’s do
 
 ### 1. Install OpenClaw via Ollama
 
-From your normal user (e.g. `tetraserv`):
+From your normal user (e.g. `piperserv`):
 
 ```bash
 ollama launch openclaw --model gemma4:e4b
@@ -619,9 +619,9 @@ After=network.target
 
 [Service]
 Type=simple
-User=tetraserv
-Group=tetraserv
-WorkingDirectory=/home/tetraserv
+User=piperserv
+Group=piperserv
+WorkingDirectory=/home/piperserv
 ExecStart=/usr/bin/openclaw gateway start
 Restart=always
 RestartSec=5
@@ -634,7 +634,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now openclaw-gateway
 ```
 
-- Replace `/usr/bin/openclaw` and `/home/tetraserv` as appropriate for your system.
+- Replace `/usr/bin/openclaw` and `/home/piperserv` as appropriate for your system.
 
 Check status:
 
@@ -1014,7 +1014,7 @@ sudo dnf update -y
 ### 3. User separation
 
 - Run Ollama as its dedicated `ollama` user (installer usually configures this).[^10][^3]
-- Run OpenClaw gateway as a non-root user (`tetraserv` or a dedicated `openclaw` account).
+- Run OpenClaw gateway as a non-root user (`piperserv` or a dedicated `openclaw` account).
 - Keep `/data` permissions tight (`750` or `700` where appropriate).
 
 
