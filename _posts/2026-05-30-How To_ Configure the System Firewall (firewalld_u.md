@@ -1,3 +1,12 @@
+---
+layout: post
+title: "How To: Configure the System Firewall (firewalld/ufw) with Common Troubleshooting Commands"
+author: "Bill Tetrault"
+date: 2026-05-29
+description: "Quick-reference guide to configure host firewalls on Rocky Linux (firewalld) and Ubuntu (ufw) with practical troubleshooting commands for homelab use."
+tags: [Linux, Rocky, Docker, Tutorial, Guide, DevOps]
+categories: [guides, tutorials, linux]
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # How To: Configure the System Firewall (firewalld/ufw) with Common Troubleshooting Commands

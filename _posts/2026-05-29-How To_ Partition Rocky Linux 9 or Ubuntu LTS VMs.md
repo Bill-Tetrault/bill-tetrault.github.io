@@ -1,3 +1,12 @@
+---
+layout: post
+title: "How To: Partition Rocky Linux 9 or Ubuntu LTS VMs for Container Workloads"
+author: "Bill Tetrault"
+date: 2026-05-29
+description: "Standardize new VM builds for containerized workloads with clean OS/data separation, LVM growth headroom, and Docker data isolated from the root filesystem.  "
+tags: [Linux, Rocky, Docker, Tutorial, Guide, DevOps]
+categories: [guides, tutorials, linux]
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # How To: Partition Rocky Linux 9 or Ubuntu LTS VMs for Container Workloads

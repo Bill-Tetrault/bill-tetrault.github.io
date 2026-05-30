@@ -1,3 +1,12 @@
+---
+layout: post
+title: "How To: Install and Securely Configure Docker Compose with `/data/docker`, Global Networks, and a Default Management Stack"
+author: "Bill Tetrault"
+date: 2026-05-29
+description: "Install Docker and Docker Compose, move Docker’s data root to `/data/docker`, define global Docker networks (`SERVERS`, `DMZ`, `INTERNAL`), and deploy a default non-root stack with Nginx (reverse proxy), Portainer, and Homarr."
+tags: [Linux, Rocky, Docker, Tutorial, Guide, DevOps]
+categories: [guides, tutorials, linux]
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # How To: Install and Securely Configure Docker Compose with `/data/docker`, Global Networks, and a Default Management Stack
