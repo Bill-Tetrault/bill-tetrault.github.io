@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "OrcaSlicer Configuration Guide — Creality Ender 3 S1 Plus (PLA & PETG))"
+title: "How To: OrcaSlicer Configuration Guide — Creality Ender 3 S1 Plus (PLA & PETG)"
 author: "Bill Tetrault"
 date: 2026-05-29
 description: ""
