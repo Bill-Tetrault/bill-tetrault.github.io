@@ -23,8 +23,8 @@ Creality Print organizes everything into three preset categories: **Printer**, *
 
 1. Launch Creality Print 7.2. In the top-left **Printer Presets** panel, click the dropdown and choose **Add / Manage Printers**.
 2. In the search box type `Ender-3 S1 Plus`. Select it from the Creality list and click **Confirm**.
-3. The profile pre-fills the build volume at **X 315 mm × Y 310 mm × Z 300 mm** and sets bed shape to **Rectangular**, origin **front-left**. Verify these under **Printer Presets → Edit (pencil icon) → Machine Settings**.[^1]
-4. If the values need correction: set X=315, Y=310, Z=300. Confirm bed shape = Rectangular, origin = (0,0). Click **Save**.
+3. The profile pre-fills the build volume at **X 300 mm × Y 300 mm × Z 300 mm** and sets bed shape to **Rectangular**, origin **front-left**. Verify these under **Printer Presets → Edit (pencil icon) → Machine Settings**.[^1]
+4. If the values need correction: set X=300, Y=300, Z=300. Confirm bed shape = Rectangular, origin = (0,0). Click **Save**.
 
 ### 1.2 Auto-Level / Mesh Features
 
