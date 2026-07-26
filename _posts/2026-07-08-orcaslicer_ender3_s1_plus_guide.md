@@ -21,8 +21,8 @@ This guide provides a conservative, stable OrcaSlicer setup for a Creality Ender
 2. In the top-left printer selector, click the edit icon next to the active printer to open **Printer Settings**.[cite:11]
 3. Click **Add Printer** (or the **+** icon), search for `Ender-3 S1`, and choose the closest stock profile available, typically **Ender-3 S1 Pro** if an S1 Plus profile is not present.[cite:3][cite:5]
 4. Open **Printer Settings → Basic Information** and set:
-   - Printable area X: **315 mm**
-   - Printable area Y: **310 mm**
+   - Printable area X: **300 mm**
+   - Printable area Y: **300 mm**
    - Printable height Z: **300 mm**
    - Bed shape: **Rectangular**
    - G-code flavor: **Marlin**.[cite:4]
