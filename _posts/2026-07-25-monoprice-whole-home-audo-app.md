@@ -3,45 +3,55 @@ layout: post
 title: "Monoprice Whole Home Audio App"
 date: 2026-07-25
 categories: [projects, home-audio]
-tags: [monoprice, whole-home-audio, ios, home-lab]
+tags: [monoprice, whole-home-audio, ios]
 ---
 
-For years, the Monoprice 6‑zone whole home audio amplifiers have been a homelab favorite, but day‑to‑day control was usually tied to wall keypads or vendor apps with limited flexibility.[web:16] The **Monoprice Whole Home Audio** app builds on that ecosystem and turns your phone into a full‑featured controller for Monoprice and compatible multi‑zone amps.[web:6] Paired with the right IP‑to‑RS‑232 bridge, it gives you quick, intuitive control of every zone, source, and audio setting in your house from a single interface.[web:6][web:10]
+I have been running Monoprice multi‑zone amps for whole‑home audio for a while, and wanted a simple way to manage zones and sources from my phone instead of walking around to keypads.[web:16] The Monoprice Whole Home Audio app ties into those controllers and gives a straightforward interface for turning zones on and off, changing sources, and tweaking basic audio settings.[web:6]
 
-![Monoprice Whole Home Audio – Zones](/assets/images/monoprice-amp-zones.jpg)
+![Zones overview](/assets/images/monoprice-amp-zones.jpg)
 
-## Multi‑zone control at a glance
+## Zones view
 
-The main **Zones** screen shows all configured rooms, their current source, and volume at a glance, with one‑tap power and per‑zone controls.[file:2] Each zone can independently select any of the available sources, adjust volume, and be turned on or off without affecting the rest of the system.[web:16] This makes it easy to, for example, keep music playing in the garage and patio while turning off indoor zones, or quickly shut down the entire system with the “All Off” control.[file:2][web:15]
+The Zones screen lists each room with its current state, source, and volume. From here it is easy to:
 
-![Zone detail – advanced controls](/assets/images/monoprice-amp-zoneadv2.jpg)
+- Turn individual zones on or off  
+- See which source each room is using  
+- Make quick volume changes  
 
-## Per‑zone audio tuning
+This is mostly what I use day‑to‑day: check which rooms are active and shut things down when nobody is listening.[web:16]
 
-Drilling into a single zone exposes advanced audio controls for **bass**, **treble**, and **balance**, along with source selection and volume.[file:5] These settings map directly to the amp’s built‑in EQ and routing, so you can tune each zone for its speakers and environment (garage vs. bathroom vs. patio) without touching the wall keypads.[web:16] Combined with per‑zone volume limits in the app, this helps keep late‑night listening comfortable while still letting you open things up when you want it louder.[web:15]
+![Zone controls](/assets/images/monoprice-amp-zoneadv1.jpg)
 
-![Zone detail – basic controls](/assets/images/monoprice-amp-zoneadv1.jpg)
+## Per‑zone controls
 
-## Flexible source management
+Tapping into a zone brings up more detailed controls. You can:
 
-The **Sources** view lets you label inputs so they’re meaningful to everyone in the house—TV, Radio, Aux, or whatever fits your setup.[file:3] The app supports up to six sources and up to eighteen total zones when multiple amplifiers are linked, mirroring what the hardware can do.[web:6][web:15] Clear naming and quick switching make it straightforward to move a whole group of rooms from background radio to TV audio or a streaming source.[file:3][web:10]
+- Change the source for that room  
+- Adjust volume  
+- Enable a sleep timer so the zone turns off after a set interval  
 
-![Source naming](/assets/images/monoprice-amp-sources.jpg)
+For spaces like bedrooms, the sleep timer is handy so music does not stay on all night.[web:6]
 
-## Server and zone configuration
+![Advanced zone settings](/assets/images/monoprice-amp-zoneadv2.jpg)
 
-On the **Server** tab you can define the system name and configure individual zones, including friendly room names and zone‑specific settings.[file:4] Once the IP‑to‑serial bridge is in place and the amp is reachable, the app can discover and control up to three linked devices, covering larger homes or multi‑amp installations.[web:6][web:15] This makes the app a good fit for both simple single‑amp setups and more complex whole‑home audio deployments.[web:10]
+The app also exposes bass, treble, and balance for each zone, which maps to the controls on the amplifier. That makes it easy to dial in rooms that need a little extra low end or to shift balance when speakers are not centered.[web:16]
+
+![Sources view](/assets/images/monoprice-amp-sources.jpg)
+
+## Sources view
+
+On the Sources tab you can rename inputs to match your setup: TV, Radio, Aux, etc. Clear labels make it easier for other family members to pick the right input without remembering which numbered source is which.[web:6]
 
 ![Server settings](/assets/images/monoprice-amp-serversettings.jpg)
 
-## Installation guide and repo
+## Server settings
 
-If you want to build a similar setup or integrate the app into your own home audio stack, check out the install guide and configuration details in the GitHub repo:
+The Server tab is where you configure the system name and zones and point the app at the IP‑to‑serial adapter that talks to the amplifier.[web:6] Once that is in place, the app handles the day‑to‑day control and you do not need to think about the serial details again.[web:10]
 
-[Monoprice Whole Home Audio App – GitHub](https://github.com/Bill-Tetrault/monoprice-amp)
+## Install guide and repo
 
-The repo documents the supported Monoprice and Dayton/compatible amps, the required IP‑to‑RS‑232 hardware, and the basic wiring and network steps to get from “amp on a shelf” to “zones controllable from your phone”.[web:6][web:10] It’s a solid starting point if you’re already comfortable with home networking and want to add reliable, low‑friction audio control to the rest of your homelab.[web:12]
+If you want to see how this fits together, I documented the setup and requirements in the GitHub repo:
 
----
+[Monoprice Whole Home Audio App – GitHub](https://github.com/Bill-Tetrault/monoprice-amp)[web:12]
 
-If you’d like, describe how you wired and networked your own system (Global Cache vs. Monoprice adapter, VLANs, etc.), and this post can be tailored to highlight that workflow step‑by‑step.
+The install guide walks through supported amps, the IP‑to‑RS‑232 hardware, and the basic configuration needed to get the app talking to your controller.[web:6] It should be enough to get a similar system up and running if you already have the hardware in place.[web:10]
